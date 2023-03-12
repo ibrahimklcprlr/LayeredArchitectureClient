@@ -1,0 +1,9 @@
+<table class="table">
+    <th>Tüm Kategoriler</th>
+    <tr  *ngFor="let category of categories">
+        <td (click)="setCurrentCategory(category)" 
+        [style]="getCurrentCategoryStyle(category)"
+        routerLink="/products/category/{{category.categoryId}}">{{category.categoryName}}</td>
+    </tr>
+</table>
+<h5 *ngIf="currentCategory.categoryId!=0">{{currentCategory.categoryName}} Alanını Seçtiniz</h5>
